@@ -1,0 +1,141 @@
+
+<div class="container">
+  <div class="row"  >
+      <div class="col-md-4">
+          <span>
+            Click on Add Row to insert record after filling all rows
+          </span>
+          <span >
+              <button type="submit" 
+              class="btn btn-primary"  
+              (click)="addRow()">Add Row</button>
+          </span> 
+        <form [formGroup]="formValidtor" (ngSubmit)="addRow()">
+          <div class="form-row">
+          <ul>
+            <div class="form-group">
+              <label for="firstName">First Name:</label>
+              <input 
+                type="text" 
+                id="firstName" 
+                formControlName="firstName" 
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && formData['firstName'].errors }"
+              />
+              <div *ngIf="submitted && formData['firstName'].errors" class="invalid-feedback">
+                <div *ngIf="formData['firstName'].errors['required']">First Name is required</div>
+                <div *ngIf="formData['firstName'].errors['maxlength']">FirstFirst Name must not exceed 10 characters</div>
+              </div>
+            </div>
+    
+            <div class="form-group">
+              <label for="lastName">Last Name:</label>
+              <input 
+                type="text" 
+                id="lastName" 
+                formControlName="lastName" 
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && formData['lastName'].errors }"
+              />
+              <div *ngIf="submitted && formData['lastName'].errors" class="invalid-feedback">
+                <div *ngIf="formData['lastName'].errors['required']">Last Name is required</div>
+                <div *ngIf="formData['lastName'].errors['maxlength']">Last Name must not exceed 10 characters</div>
+              </div>
+            </div>
+    
+    
+            <div class="form-group">
+              <label for="country">Country:</label>
+              <input 
+                type="text" 
+                id="country" 
+                formControlName="country" 
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && formData['country'].errors }"
+              />
+              <div *ngIf="submitted && formData['country'].errors" class="invalid-feedback">
+                <div *ngIf="formData['country'].errors['required']">Country Name is required</div>
+                <div *ngIf="formData['country'].errors['maxlength']">Country Name must not exceed 10 characters</div>
+              </div>
+            </div>
+    
+    
+            <div class="form-group">
+              <label for="state">State :</label>
+              <input 
+                type="text" 
+                id="state" 
+                formControlName="state" 
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && formData['state'].errors }"
+              />
+              <div *ngIf="submitted && formData['state'].errors" class="invalid-feedback">
+                <div *ngIf="formData['state'].errors['required']">State Name is required</div>
+                <div *ngIf="formData['state'].errors['maxlength']">State must not exceed 10 characters</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="state">City :</label>
+              <input 
+                type="text" 
+                id="city" 
+                formControlName="city" 
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && formData['city'].errors }"
+              />
+              <div *ngIf="submitted && formData['city'].errors" class="invalid-feedback">
+                <div *ngIf="formData['city'].errors['required']">State Name is required</div>
+                <div *ngIf="formData['city'].errors['maxlength']">State must not exceed 10 characters</div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="postalCode">Age:</label>
+              <input 
+                type="number" 
+                id="postalCode" 
+                formControlName="postalCode" 
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && formData['postalCode'].errors }"
+              />
+              <div *ngIf="submitted && formData['postalCode'].errors" class="invalid-feedback">
+                <div *ngIf="formData['postalCode'].errors['required']">Postal Code field is required</div>
+                <div *ngIf="formData['postalCode'].errors['min']">Postal Code must be  0 or greater</div>
+              </div>
+            </div>
+          </ul>
+
+          </div>
+        </form>
+      </div>
+      <div class="col-md-8">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Country</th>
+              <th>State</th>
+              <th>City</th>
+              <th>Postal Code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of tableData">
+              <th>{{ row.firstName }}</th>
+              <th>{{ row.lastName }}</th>
+              <th>{{ row.country }}</th>
+              <th>{{ row.state }}</th>
+              <th>{{ row.city }}</th>
+              <th>{{ row.postalCode }}</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>
+</div>
+
+
+    
+    

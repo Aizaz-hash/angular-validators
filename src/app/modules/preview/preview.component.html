@@ -1,0 +1,26 @@
+<div class="table-container">
+    <h2>Output Table</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Country</th>
+          <th>State</th>
+          <th>City</th>
+          <th>Postal Code</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of tableData">
+          <th>{{ row.firstName }}</th>
+          <th>{{ row.lastName }}</th>
+          <th>{{ row.country }}</th>
+          <th>{{ row.state }}</th>
+          <th>{{ row.city }}</th>
+          <th>{{ row.postalCode }}</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

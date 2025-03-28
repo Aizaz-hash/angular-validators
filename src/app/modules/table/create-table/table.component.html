@@ -1,0 +1,63 @@
+<table>
+    <tr>
+      <th>Column 1</th>
+      <th>Column 2</th>
+      <th>Column 3</th>
+      <th>Column 4</th>
+      <th>Column 5</th>
+      <th>Column 6</th>
+      <th>Column 7</th>
+      <th>Column 8</th>
+    </tr>
+    <tr *ngFor="let row of rows.controls; let i = index" [formGroup]="row">
+      <td>
+        <input formControlName="column1" />
+        <div *ngIf="row.get('column1')?.touched && row.get('column1')?.invalid">
+          <span style="color: red;">Required</span>
+        </div>
+      </td>
+      <td>
+        <input formControlName="column2" />
+        <div *ngIf="row.get('column2')?.touched && row.get('column2')?.invalid">
+          <span style="color: red;">Required</span>
+        </div>
+      </td>
+      <td>
+        <input formControlName="column3" />
+        <div *ngIf="row.get('column3')?.touched && row.get('column3')?.invalid">
+          <span style="color: red;">Required</span>
+        </div>
+      </td>
+      <td>
+        <input formControlName="column4" />
+        <div *ngIf="row.get('column4')?.touched && row.get('column4')?.invalid">
+          <span style="color: red;">Required</span>
+        </div>
+      </td>
+      <td>
+        <input formControlName="column5" />
+        <div *ngIf="row.get('column5')?.touched && row.get('column5')?.invalid">
+          <span style="color: red;">Required</span>
+        </div>
+      </td>
+      <td>
+        <input formControlName="column6" />
+        <div *ngIf="row.get('column6')?.touched && row.get('column6')?.invalid">
+          <span style="color: red;">Required</span>
+        </div>
+      </td>
+      <td>
+        <input formControlName="column7" />
+        <div *ngIf="row.get('column7')?.touched && row.get('column7')?.invalid">
+          <span style="color: red;">Required</span>
+        </div>
+      </td>
+      <td>
+        <input formControlName="column8" />
+        <div *ngIf="row.get('column8')?.touched && row.get('column8')?.invalid">
+          <span style="color: red;">Required</span>
+        </div>
+      </td>
+    </tr>
+  </table> 
+  <button (click)="addRow()">Add Row</button>

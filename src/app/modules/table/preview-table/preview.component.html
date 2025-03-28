@@ -1,0 +1,13 @@
+<table>
+    <tr>
+      <th>Column 1</th>
+      <th>Column 2</th>
+      <th>Column 3</th>
+    </tr>
+    <tr *ngFor="let row of tableForm.get('rows')?.controls; let i = index">
+      <td>{{ row.value.column1 }}</td>
+      <td>{{ row.value.column2 }}</td>
+      <td>{{ row.value.column3 }}</td>
+    </tr>
+  </table>
+  
